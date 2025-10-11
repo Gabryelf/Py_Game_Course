@@ -1,19 +1,21 @@
-from core.map import GameMap
+import sys
+import os
+# Добавляем корень проекта в Python path для абсолютных импортов
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-""" Главная точка входа в игру, запуск проекта!!!"""
+from src.core.game import GameController
 
 
 def main():
 
-    game_map = GameMap(width=50, height=50)
-
-    tile_at_0_0 = game_map.get_tile(0, 0)
-    print(f"Tile at (1,1) is {tile_at_0_0}. Is passable? {tile_at_0_0.is_passable}")
-    tile_at_1_1 = game_map.get_tile(1, 1)
-    print(f"Tile at (1,1) is {tile_at_1_1}. Is passable? {tile_at_1_1.is_passable}")
-
-    print("\n--- Game Map ---")
-    game_map.render()
+    try:
+        game = GameController()
+        game.run()
+    except KeyboardInterrupt:
+        print("\n\nGame interrupted by user. Goodbye!")
+    except Exception as e:
+        print(f"\n\nUnexpected error: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
