@@ -1,11 +1,13 @@
 import time
 from typing import Optional
-import pygame  # Переносим импорт pygame в начало файла
+import pygame
 
 # АБСОЛЮТНЫЕ импорты через корневой пакет client.src
 from client.src.core.renderer import Renderer, PygameRenderer
 from client.src.core.game_state import GameState, GameStateType
 from client.src.core.wave_manager import WaveManager
+from client.src.core.battle_manager import BattleManager  # ДОБАВЛЯЕМ ЭТОТ ИМПОРТ
+from client.src.core.entity_renderer import EntityRenderer
 from client.src.entities.tower import Tower
 from client.src.ui.components import Button, InfoPanel
 from client.src.utils.config import config
@@ -17,6 +19,7 @@ class GameEngine:
 
     def __init__(self):
         self.renderer: Optional[Renderer] = None
+        self.entity_renderer = None
         self.running = False
         self.clock = None
         self.logger = logger
@@ -28,6 +31,7 @@ class GameEngine:
 
         self.game_state = None
         self.wave_manager = None
+        self.battle_manager = None  # ДОБАВЛЯЕМ ЭТОТ АТРИБУТ
         self.tower = None
         self.ui_components = []
 
@@ -47,10 +51,13 @@ class GameEngine:
         # Инициализация игрового состояния
         self.game_state = GameState()
         self.wave_manager = WaveManager()
+        self.battle_manager = BattleManager()  # ДОБАВЛЯЕМ ИНИЦИАЛИЗАЦИЮ
         self.tower = Tower()
 
         # Создание UI
         self._create_ui()
+        # Инициализация рендерера сущностей
+        self.entity_renderer = EntityRenderer()
 
         logger.info("Game systems initialized")
         return True
@@ -123,12 +130,21 @@ class GameEngine:
         self.frame_count += 1
 
         if self.game_state and self.game_state.game_active:
-            # Обновление волн
+            # Обновление волн и спавн врагов
             enemies_to_spawn = self.wave_manager.update(delta_time, self.game_state)
 
-            # Здесь будет логика создания врагов
+            # Спавн новых врагов через BattleManager
             for enemy_type in enemies_to_spawn:
-                logger.debug(f"Should spawn: {enemy_type}")
+                enemy = self.battle_manager.spawn_enemy(enemy_type, config.enemy_path)
+                logger.info(f"Spawned {enemy_type} at wave {self.game_state.player_progress.current_wave}")
+
+            # Обновление боевой системы
+            if self.battle_manager and self.tower:
+                defeated_enemies = self.battle_manager.update(delta_time, self.tower, self.game_state)
+
+                # Обновление счета за убитых врагов
+                for enemy in defeated_enemies:
+                    self.game_state.player_progress.score += enemy.type.reward * 10
 
     def _render(self):
         """Отрисовка игрового состояния"""
@@ -148,26 +164,35 @@ class GameEngine:
         self._render_ui()
 
         # Отладочная информация
-        #self._render_debug_info()
+        self._render_debug_info()
 
         self.renderer.update_display()
 
     def _render_battle(self):
         """Отрисовка битвы"""
-        # Центральная башня
-        tower_pos = config.screen_center
-        self.renderer.draw_circle(tower_pos, 50, (70, 130, 180))
+        # Отрисовка боевых сущностей через entity_renderer
+        if self.entity_renderer and self.battle_manager and self.tower:
+            self.entity_renderer.draw_battle_entities(
+                self.renderer.screen,
+                self.tower,
+                self.battle_manager.active_enemies,
+                self.battle_manager.active_projectiles
+            )
 
-        # Радиус атаки башни (для отладки) - ИСПРАВЛЯЕМ ЗДЕСЬ
+        # Радиус атаки башни (для отладки)
         if self.tower:
             attack_range = self.tower.current_stats.attack_range
-            self.renderer.draw_circle(tower_pos, attack_range, (255, 255, 255), 1)
+            self.renderer.draw_circle(self.tower.position, attack_range, (255, 255, 255), 1)
 
-        # Информация о волне
-        if self.game_state:
+        # Информация о волне и врагах
+        if self.game_state and self.battle_manager:
             wave_text = f"Wave: {self.game_state.player_progress.current_wave}"
             self.renderer.draw_text(wave_text, (config.SCREEN_WIDTH // 2 - 50, 20),
                                     (255, 255, 255), 28)
+
+            enemies_text = f"Enemies: {self.battle_manager.get_enemy_count()}"
+            self.renderer.draw_text(enemies_text, (config.SCREEN_WIDTH // 2 - 50, 50),
+                                    (255, 255, 255), 24)
 
     def _render_ui(self):
         """Отрисовка UI компонентов"""

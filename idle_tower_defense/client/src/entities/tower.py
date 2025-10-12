@@ -1,5 +1,8 @@
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
+import math
+import time
+import random
 from client.src.utils.config import config
 from client.src.utils.logger import logger
 
@@ -20,7 +23,7 @@ class TowerStats:
 
 
 class Tower:
-    """Класс башни игрока"""
+    """Класс башни игрока - ТОЛЬКО логика, без рендеринга"""
 
     def __init__(self):
         self.position = config.screen_center
@@ -30,22 +33,87 @@ class Tower:
         self.experience = 0
         self.experience_to_next_level = 100
 
-        # Визуальные параметры
+        # Система стрельбы
+        self.projectiles: List['Projectile'] = []
+        self.last_attack_time = 0
+        self.current_target: Optional['Enemy'] = None
+
+        # Визуальные параметры (только данные, не логика отрисовки)
         self.radius = 50
         self.color = (70, 130, 180)  # Steel blue
 
         logger.info("Tower created")
 
-    def upgrade_damage(self, cost: int) -> bool:
-        """Улучшить урон башни"""
-        # Здесь будет логика улучшения
-        logger.info(f"Damage upgrade attempted (cost: {cost})")
-        return True
+    def update(self, delta_time: float, enemies: List['Enemy']) -> List['Projectile']:
+        """Обновление логики башни. Возвращает новые снаряды"""
+        new_projectiles = []
 
-    def upgrade_attack_speed(self, cost: int) -> bool:
-        """Улучшить скорость атаки"""
-        logger.info(f"Attack speed upgrade attempted (cost: {cost})")
-        return True
+        # Поиск цели
+        if not self.current_target or not self.current_target.is_alive():
+            self.current_target = self._find_target(enemies)
+
+        # Стрельба по цели
+        current_time = time.time()
+        if (self.current_target and
+                current_time - self.last_attack_time >= self.current_stats.attack_cooldown):
+
+            if self._is_target_in_range(self.current_target):
+                projectile = self._shoot_at_target(self.current_target)
+                new_projectiles.append(projectile)
+                self.last_attack_time = current_time
+            else:
+                # Цель вышла из радиуса - ищем новую
+                self.current_target = None
+
+        # Обновление существующих снарядов
+        self._update_projectiles()
+
+        return new_projectiles
+
+    def _find_target(self, enemies: List['Enemy']) -> Optional['Enemy']:
+        """Поиск цели в радиусе атаки"""
+        valid_targets = [
+            enemy for enemy in enemies
+            if enemy.is_alive() and self._is_target_in_range(enemy)
+        ]
+
+        if not valid_targets:
+            return None
+
+        # Простая стратегия: ближайшая цель
+        return min(valid_targets, key=lambda e: self._distance_to(e))
+
+    def _is_target_in_range(self, enemy: 'Enemy') -> bool:
+        """Проверка, находится ли враг в радиусе атаки"""
+        return self._distance_to(enemy) <= self.current_stats.attack_range
+
+    def _distance_to(self, enemy: 'Enemy') -> float:
+        """Расстояние до врага"""
+        dx = enemy.center_position[0] - self.position[0]
+        dy = enemy.center_position[1] - self.position[1]
+        return math.sqrt(dx * dx + dy * dy)
+
+    def _shoot_at_target(self, target: 'Enemy') -> 'Projectile':
+        """Создание снаряда для атаки цели"""
+        damage = self.current_stats.damage
+
+        # Критический удар
+        if random.random() < self.current_stats.critical_chance:
+            damage *= self.current_stats.critical_multiplier
+            logger.debug("Critical hit!")
+
+        from .projectile import Projectile
+        projectile = Projectile(self.position, target, damage)
+        logger.debug(f"Tower shooting at {target.type.name} for {damage} damage")
+        return projectile
+
+    def _update_projectiles(self):
+        """Обновление состояния снарядов"""
+        self.projectiles = [p for p in self.projectiles if p.active]
+
+    def add_projectile(self, projectile: 'Projectile'):
+        """Добавление снаряда для отслеживания"""
+        self.projectiles.append(projectile)
 
     def add_experience(self, amount: int):
         """Добавить опыт башне"""

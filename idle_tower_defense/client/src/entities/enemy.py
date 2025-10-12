@@ -11,13 +11,13 @@ class EnemyType:
     name: str
     health: float
     speed: float
-    color: Tuple[int, int, int]
+    color: Tuple[int, int, int]  # Данные для рендерера
     reward: int
     experience: int
 
 
 class Enemy:
-    """Базовый класс врага"""
+    """Базовый класс врага - ТОЛЬКО логика"""
 
     # Предопределенные типы врагов
     TYPES = {
@@ -38,13 +38,25 @@ class Enemy:
         self.current_path_index = 0
         self.position = self.path[0] if self.path else (0, 0)
         self.radius = 20
+        self.reached_end = False
 
         logger.debug(f"Enemy {self.type.name} created")
 
-    def update(self, delta_time: float):
-        """Обновление позиции врага"""
-        if self.current_path_index >= len(self.path) - 1:
-            return True  # Враг дошел до конца
+    def take_damage(self, damage: float) -> bool:
+        """Получение урона. Возвращает True если враг умер"""
+        self.health -= damage
+        logger.debug(f"Enemy {self.type.name} took {damage} damage. Health: {self.health}")
+
+        if self.health <= 0:
+            logger.info(f"Enemy {self.type.name} defeated!")
+            return True
+        return False
+
+    def update(self, delta_time: float) -> bool:
+        """Обновление позиции врага. Возвращает True если враг дошел до конца"""
+        if self.reached_end or self.current_path_index >= len(self.path) - 1:
+            self.reached_end = True
+            return True
 
         target_pos = self.path[self.current_path_index + 1]
         dx = target_pos[0] - self.position[0]
@@ -53,6 +65,10 @@ class Enemy:
 
         if distance < 5:  # Достигли точки пути
             self.current_path_index += 1
+            if self.current_path_index >= len(self.path) - 1:
+                self.reached_end = True
+                logger.debug(f"Enemy {self.type.name} reached the end!")
+                return True
             return self.update(delta_time)
 
         # Движение к цели
@@ -65,13 +81,7 @@ class Enemy:
             self.position[1] + direction_y * move_distance
         )
 
-        return False  # Враг еще не дошел до конца
-
-    def take_damage(self, damage: float):
-        """Получение урона"""
-        self.health -= damage
-        logger.debug(f"Enemy took {damage} damage. Health: {self.health}")
-        return self.health <= 0
+        return False
 
     def is_alive(self) -> bool:
         """Проверка, жив ли враг"""
@@ -79,5 +89,10 @@ class Enemy:
 
     @property
     def center_position(self) -> Tuple[float, float]:
-        """Центральная позиция для отрисовки"""
-        return self.position
+        """Центральная позиция для отрисовки и расчетов"""
+        return (self.position[0], self.position[1])
+
+    @property
+    def health_ratio(self) -> float:
+        """Отношение текущего здоровья к максимальному"""
+        return self.health / self.max_health
