@@ -1,16 +1,21 @@
-import sys
-import tty
-import termios
 from typing import List, Dict, Any
-from .map import GameMap
-from .entities import Player, NPC
 
 
 class GameController:
+    """
+    Главный контроллер игры. Отвечает за:
+    - Управление игровым циклом
+    - Обработку пользовательского ввода
+    - Координацию между различными компонентами
+    - Состояние игры
+    """
 
     def __init__(self, map_width: int = 10, map_height: int = 8):
+        from core import GameMap
         self.game_map = GameMap(map_width, map_height)
+        from core.entities import Player
         self.player = Player("Hero", 1, 1)  # Стартовая позиция игрока
+        from core.entities import NPC
         self.npcs: List[NPC] = [
             NPC("Old Sage", 3, 3, "Welcome to our world!"),
             NPC("Guard", 5, 5, "No trespassing!")
@@ -44,6 +49,7 @@ class GameController:
         return True
 
     def _interact(self):
+        """Взаимодействие с ближайшими NPC"""
         px, py = self.player.position
         for npc in self.npcs:
             nx, ny = npc.position
@@ -54,17 +60,9 @@ class GameController:
         print("\nNo one to interact with nearby.")
         return True
 
-    def _get_key(self) -> str:
-        fd = sys.stdin.fileno()
-        old_settings = termios.tcgetattr(fd)
-        try:
-            tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(1)
-        finally:
-            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
 
     def process_input(self) -> bool:
+        """Обработка пользовательского ввода. Возвращает True если игра должна продолжиться."""
         print("\nCommand [WASD to move, I-interact, Q-quit]: ", end='', flush=True)
         key = self._get_key().lower()
 
@@ -75,14 +73,18 @@ class GameController:
             return True
 
     def render(self):
+        """Отрисовка игрового состояния"""
         print("\n" + "=" * 40)
 
+        # Рендерим карту с персонажами
         for y in range(self.game_map.height):
             row = []
             for x in range(self.game_map.width):
+                # Проверяем, есть ли здесь игрок
                 if (x, y) == self.player.position:
                     row.append(self.player.symbol())
                 else:
+                    # Проверяем, есть ли здесь NPC
                     npc_here = None
                     for npc in self.npcs:
                         if (x, y) == npc.position:
@@ -109,4 +111,3 @@ class GameController:
             self.is_running = self.process_input()
 
         print("\nThanks for playing! Goodbye!")
-
