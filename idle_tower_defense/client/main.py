@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 Главная точка входа в клиентское приложение Idle Tower Defense
 """
@@ -6,11 +6,16 @@
 import sys
 import os
 
-# Добавляем путь к модулям
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+# Добавляем путь к src в PYTHONPATH
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from core.game_engine import GameEngine
-from utils.logger import logger
+try:
+    from client.src.core.game_engine import GameEngine
+    from client.src.utils.logger import logger
+except ImportError as e:
+    print(f"Import error: {e}")
+    print("Please make sure you have the correct project structure")
+    sys.exit(1)
 
 
 def main():

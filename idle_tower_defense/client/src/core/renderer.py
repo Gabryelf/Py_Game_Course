@@ -73,9 +73,15 @@ class PygameRenderer(Renderer):
         """Отрисовка прямоугольника"""
         self.pygame.draw.rect(self.screen, color, rect)
 
-    def draw_circle(self, center: Tuple[float, float], radius: float, color: Tuple[int, int, int]):
-        """Отрисовка круга"""
-        self.pygame.draw.circle(self.screen, color, (int(center[0]), int(center[1])), int(radius))
+    def draw_circle(self, center: Tuple[float, float], radius: float, color: Tuple[int, int, int], width: int = 0):
+        """Отрисовка круга
+        Args:
+            center: Центр круга (x, y)
+            radius: Радиус круга
+            color: Цвет в формате RGB
+            width: Толщина линии (0 - заливка, >0 - контур)
+        """
+        self.pygame.draw.circle(self.screen, color, (int(center[0]), int(center[1])), int(radius), width)
 
     def draw_text(self, text: str, position: Tuple[float, float], color: Tuple[int, int, int], size: int = 24):
         """Отрисовка текста"""

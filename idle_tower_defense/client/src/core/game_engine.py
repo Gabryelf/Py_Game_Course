@@ -1,7 +1,13 @@
 import time
 from typing import Optional
+import pygame  # Переносим импорт pygame в начало файла
 
+# АБСОЛЮТНЫЕ импорты через корневой пакет client.src
 from client.src.core.renderer import Renderer, PygameRenderer
+from client.src.core.game_state import GameState, GameStateType
+from client.src.core.wave_manager import WaveManager
+from client.src.entities.tower import Tower
+from client.src.ui.components import Button, InfoPanel
 from client.src.utils.config import config
 from client.src.utils.logger import logger
 
@@ -20,6 +26,11 @@ class GameEngine:
         self.fps = 0
         self.last_fps_update = time.time()
 
+        self.game_state = None
+        self.wave_manager = None
+        self.tower = None
+        self.ui_components = []
+
     def initialize(self) -> bool:
         """Инициализация игрового движка"""
         self.logger.info("Initializing game engine...")
@@ -31,11 +42,37 @@ class GameEngine:
             return False
 
         # Инициализация часов для контроля FPS
-        import pygame
         self.clock = pygame.time.Clock()
 
-        self.logger.info("Game engine initialized successfully")
+        # Инициализация игрового состояния
+        self.game_state = GameState()
+        self.wave_manager = WaveManager()
+        self.tower = Tower()
+
+        # Создание UI
+        self._create_ui()
+
+        logger.info("Game systems initialized")
         return True
+
+    def _create_ui(self):
+        """Создание пользовательского интерфейса"""
+        # Кнопка начала битвы
+        start_button = Button(
+            (config.SCREEN_WIDTH // 2 - 100, config.SCREEN_HEIGHT // 2, 200, 50),
+            "Start Battle",
+            self._on_start_battle
+        )
+
+        # Панель информации
+        info_panel = InfoPanel((10, 10, 200, 150))
+
+        self.ui_components = [start_button, info_panel]
+
+    def _on_start_battle(self):
+        """Обработчик начала битвы"""
+        self.game_state.start_battle()
+        self.wave_manager.start_wave(1)
 
     def run(self):
         """Запуск основного игрового цикла"""
@@ -46,10 +83,17 @@ class GameEngine:
         self.running = True
         self.logger.info("Starting main game loop")
 
+        # Добавляем расчет delta_time
+        last_time = time.time()
+
         # Основной игровой цикл
         while self.running:
+            current_time = time.time()
+            delta_time = current_time - last_time
+            last_time = current_time
+
             self._handle_events()
-            self._update()
+            self._update(delta_time)  # Передаем delta_time
             self._render()
             self._update_fps()
 
@@ -60,8 +104,6 @@ class GameEngine:
 
     def _handle_events(self):
         """Обработка событий ввода"""
-        import pygame
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -71,48 +113,86 @@ class GameEngine:
                     self.running = False
                     self.logger.info("Escape key pressed - quitting")
 
-    def _update(self):
+            # Передача событий UI компонентам
+            for component in self.ui_components:
+                if component.handle_event(event):
+                    break
+
+    def _update(self, delta_time: float):
         """Обновление игровой логики"""
-        # Здесь будет обновление состояния игры
         self.frame_count += 1
+
+        if self.game_state and self.game_state.game_active:
+            # Обновление волн
+            enemies_to_spawn = self.wave_manager.update(delta_time, self.game_state)
+
+            # Здесь будет логика создания врагов
+            for enemy_type in enemies_to_spawn:
+                logger.debug(f"Should spawn: {enemy_type}")
 
     def _render(self):
         """Отрисовка игрового состояния"""
         if not self.renderer:
             return
 
-        # Очистка экрана
         self.renderer.clear_screen()
 
-        # Отрисовка тестовой сцены
-        self._render_test_scene()
+        # Отрисовка в зависимости от состояния
+        if self.game_state and self.game_state.current_state:
+            if self.game_state.current_state.name == "LOBBY":
+                self._render_lobby()
+            elif self.game_state.current_state.name == "BATTLE":
+                self._render_battle()
 
-        # Отрисовка FPS
-        self._render_debug_info()
+        # Отрисовка UI
+        self._render_ui()
 
-        # Обновление дисплея
+        # Отладочная информация
+        #self._render_debug_info()
+
         self.renderer.update_display()
 
-    def _render_test_scene(self):
-        """Отрисовка тестовой сцены для демонстрации"""
-        # Центральная башня (круг)
-        tower_center = config.screen_center
-        tower_radius = 50
-        self.renderer.draw_circle(tower_center, tower_radius, config.UI_PRIMARY_COLOR)
+    def _render_battle(self):
+        """Отрисовка битвы"""
+        # Центральная башня
+        tower_pos = config.screen_center
+        self.renderer.draw_circle(tower_pos, 50, (70, 130, 180))
 
-        # Текст с названием игры
-        title_text = "Idle Tower Defense - Lesson 1"
-        text_position = (config.SCREEN_WIDTH // 2 - 200, 50)
-        self.renderer.draw_text(title_text, text_position, (255, 255, 255), 32)
+        # Радиус атаки башни (для отладки) - ИСПРАВЛЯЕМ ЗДЕСЬ
+        if self.tower:
+            attack_range = self.tower.current_stats.attack_range
+            self.renderer.draw_circle(tower_pos, attack_range, (255, 255, 255), 1)
 
-        # Инструкция
-        instruction = "Press ESC to exit"
-        instruction_pos = (config.SCREEN_WIDTH // 2 - 100, config.SCREEN_HEIGHT - 50)
-        self.renderer.draw_text(instruction, instruction_pos, (200, 200, 200), 24)
+        # Информация о волне
+        if self.game_state:
+            wave_text = f"Wave: {self.game_state.player_progress.current_wave}"
+            self.renderer.draw_text(wave_text, (config.SCREEN_WIDTH // 2 - 50, 20),
+                                    (255, 255, 255), 28)
+
+    def _render_ui(self):
+        """Отрисовка UI компонентов"""
+        for component in self.ui_components:
+            if hasattr(component, 'draw'):
+                # Используем isinstance без импорта, проверяя по классу
+                if type(component).__name__ == 'InfoPanel' and self.game_state:
+                    component.draw(self.renderer.screen, self.game_state)
+                else:
+                    component.draw(self.renderer.screen)
+
+    def _render_lobby(self):
+        """Отрисовка лобби"""
+        # Заголовок
+        title_text = "Idle Tower Defense - Lobby"
+        self.renderer.draw_text(title_text,
+                                (config.SCREEN_WIDTH // 2 - 200, 100),
+                                (255, 255, 255), 36)
+
+        # Центральная башня
+        self.renderer.draw_circle(config.screen_center, 60, (70, 130, 180))
 
     def _render_debug_info(self):
         """Отрисовка отладочной информации"""
-        fps_text = f"FPS: {self.fps}"
+        fps_text = f"FPS: {self.fps:.1f}"
         self.renderer.draw_text(fps_text, (10, 10), (0, 255, 0), 24)
 
         frame_text = f"Frames: {self.frame_count}"
@@ -128,5 +208,4 @@ class GameEngine:
     def _shutdown(self):
         """Корректное завершение работы"""
         self.logger.info("Shutting down game engine")
-        import pygame
         pygame.quit()
