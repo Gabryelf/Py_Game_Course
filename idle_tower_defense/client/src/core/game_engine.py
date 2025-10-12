@@ -12,6 +12,9 @@ from client.src.entities.tower import Tower
 from client.src.ui.components import Button, InfoPanel
 from client.src.utils.config import config
 from client.src.utils.logger import logger
+from client.src.database.base_database import MockDatabase #MongoDBDatabase
+from client.src.systems.upgrade_system import UpgradeSystem
+from client.src.ui.upgrade_ui import UpgradePanel
 
 
 class GameEngine:
@@ -34,6 +37,11 @@ class GameEngine:
         self.battle_manager = None  # ДОБАВЛЯЕМ ЭТОТ АТРИБУТ
         self.tower = None
         self.ui_components = []
+
+        self.database = None
+        self.upgrade_system = None
+        self.upgrade_panel = None
+        self.current_player_id = "test_player_001"  # Временный ID для тестирования
 
     def initialize(self) -> bool:
         """Инициализация игрового движка"""
@@ -59,8 +67,61 @@ class GameEngine:
         # Инициализация рендерера сущностей
         self.entity_renderer = EntityRenderer()
 
+        # Инициализация базы данных
+        self.database = MockDatabase()  # Или MongoDBDatabase() когда будет настроена MongoDB
+        if not self.database.connect():
+            logger.warning("Failed to connect to database, using mock data")
+
+        # Инициализация системы улучшений
+        self.upgrade_system = UpgradeSystem()
+
+        # Загрузка сохраненных улучшений
+        self._load_player_data()
+
+        # Создание панели улучшений
+        self.upgrade_panel = UpgradePanel((config.SCREEN_WIDTH - 320, 100, 300, 500))
+        self.upgrade_panel.set_systems(self.upgrade_system, self.tower, self.game_state)
+        self.upgrade_panel.visible = False  # Сначала скрыта
+
+        # Добавляем панель улучшений в UI компоненты
+        self.ui_components.append(self.upgrade_panel)
+
         logger.info("Game systems initialized")
         return True
+
+    def _load_player_data(self):
+        """Загрузка данных игрока из базы данных"""
+        if not self.database:
+            return
+
+        player_data = self.database.load_player_data(self.current_player_id)
+        if player_data:
+            # Загрузка улучшений
+            if 'upgrades' in player_data:
+                self.upgrade_system.load_upgrades(player_data['upgrades'])
+                logger.info("Player upgrades loaded from database")
+
+            # Загрузка прогресса (если нужно)
+            if 'stats' in player_data:
+                logger.info("Player stats loaded from database")
+
+    def _save_player_data(self):
+        """Сохранение данных игрока в базу данных"""
+        if not self.database:
+            return
+
+        player_data = {
+            'player_id': self.current_player_id,
+            'upgrades': self.upgrade_system.save_upgrades(),
+            'high_score': self.game_state.player_progress.score if self.game_state else 0,
+            'level': self.tower.level if self.tower else 1,
+            'last_save': time.time()
+        }
+
+        if self.database.save_player_data(self.current_player_id, player_data):
+            logger.info("Player data saved successfully")
+        else:
+            logger.error("Failed to save player data")
 
     def _create_ui(self):
         """Создание пользовательского интерфейса"""
@@ -80,6 +141,15 @@ class GameEngine:
         """Обработчик начала битвы"""
         self.game_state.start_battle()
         self.wave_manager.start_wave(1)
+
+        # Скрываем кнопку старта битвы и показываем панель улучшений
+        for component in self.ui_components:
+            if isinstance(component, Button) and component.text == "Start Battle":
+                component.visible = False
+            elif isinstance(component, UpgradePanel):
+                component.visible = True
+
+        logger.info("Start battle button hidden, upgrade panel shown")
 
     def run(self):
         """Запуск основного игрового цикла"""
@@ -145,6 +215,10 @@ class GameEngine:
                 # Обновление счета за убитых врагов
                 for enemy in defeated_enemies:
                     self.game_state.player_progress.score += enemy.type.reward * 10
+
+                    # Автосохранение каждые 120 секунд
+                    if self.frame_count % (120 * config.FPS) == 0:
+                        self._save_player_data()
 
     def _render(self):
         """Отрисовка игрового состояния"""
@@ -232,5 +306,11 @@ class GameEngine:
 
     def _shutdown(self):
         """Корректное завершение работы"""
+        # Сохраняем данные при выходе
+        self._save_player_data()
+
+        if self.database:
+            self.database.disconnect()
+
         self.logger.info("Shutting down game engine")
         pygame.quit()
