@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class DatabaseInterface(ABC):
-    """Абстрактный базовый класс для всех СУБД"""
 
     @abstractmethod
     def connect(self):

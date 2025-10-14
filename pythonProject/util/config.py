@@ -1,4 +1,3 @@
-# Конфигурация для разных СУБД
 DATABASES = {
     "postgresql": {
         "host": "localhost",
@@ -21,7 +20,6 @@ DATABASES = {
     }
 }
 
-# Универсальные SQL шаблоны
 SQL_TEMPLATES = {
     "create_users": """
         CREATE TABLE IF NOT EXISTS users (

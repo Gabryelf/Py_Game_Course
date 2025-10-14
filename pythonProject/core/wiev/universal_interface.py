@@ -4,8 +4,6 @@ from core.model.mongodb_db import MongoDB
 
 
 class UniversalDBManager:
-    """Универсальный менеджер для работы с разными СУБД"""
-
     def __init__(self):
         self.databases = {}
         self.current_db = None

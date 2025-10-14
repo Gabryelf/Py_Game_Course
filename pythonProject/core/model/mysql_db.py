@@ -10,7 +10,6 @@ class MySQLDB(DatabaseInterface):
         self.connect()
 
     def connect(self):
-        """Подключение к MySQL"""
         try:
             self.conn = mysql.connector.connect(**DATABASES["mysql"])
             print("Успешное подключение к MySQL")
@@ -18,7 +17,6 @@ class MySQLDB(DatabaseInterface):
             print(f"Ошибка подключения к MySQL: {e}")
 
     def create_tables(self):
-        """Создание таблиц в MySQL"""
         try:
             cur = self.conn.cursor()
 
@@ -38,7 +36,6 @@ class MySQLDB(DatabaseInterface):
             return False
 
     def insert_user(self, email, username, subscription_type='basic'):
-        """Добавление пользователя в MySQL"""
         try:
             cur = self.conn.cursor()
             cur.execute(
@@ -70,7 +67,6 @@ class MySQLDB(DatabaseInterface):
             return False
 
     def insert_video(self, title, description, duration, user_id, genre_ids=None):
-        """Добавление видео в MySQL"""
         try:
             cur = self.conn.cursor()
 
@@ -98,7 +94,6 @@ class MySQLDB(DatabaseInterface):
             return None
 
     def show_data(self, table_name):
-        """Показать данные из таблицы MySQL"""
         try:
             cur = self.conn.cursor()
             cur.execute(f"SELECT * FROM {table_name}")
@@ -111,8 +106,21 @@ class MySQLDB(DatabaseInterface):
             cur.close()
             return rows
         except Exception as e:
-            print(f"❌ Ошибка чтения данных из MySQL: {e}")
+            print(f"Ошибка чтения данных из MySQL: {e}")
             return []
 
     def get_db_type(self):
         return self.db_type
+
+
+
+
+
+
+
+
+# Идеально для:
+# - Веб-приложения
+# - Простые транзакции
+# - Чтение-ориентированные workload
+# - Репликация для отказоустойчивости

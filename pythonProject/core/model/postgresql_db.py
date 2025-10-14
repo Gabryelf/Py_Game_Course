@@ -11,7 +11,6 @@ class PostgreSQLDB(DatabaseInterface):
         self.connect()
 
     def connect(self):
-        """Подключение к PostgreSQL"""
         try:
             self.conn = psycopg2.connect(**DATABASES["postgresql"])
             print("Успешное подключение к PostgreSQL")
@@ -19,12 +18,11 @@ class PostgreSQLDB(DatabaseInterface):
             print(f"Ошибка подключения к PostgreSQL: {e}")
 
     def create_tables(self):
-        """Создание таблиц в PostgreSQL"""
         try:
             cur = self.conn.cursor()
             for table_name, create_sql in SQL_TEMPLATES.items():
                 cur.execute(create_sql)
-                print(f"✅ Таблица создана: {table_name}")
+                print(f"Таблица создана: {table_name}")
 
             self.conn.commit()
             cur.close()
@@ -34,7 +32,6 @@ class PostgreSQLDB(DatabaseInterface):
             return False
 
     def insert_user(self, email, username, subscription_type='basic'):
-        """Добавление пользователя"""
         try:
             cur = self.conn.cursor()
             cur.execute(
@@ -50,7 +47,6 @@ class PostgreSQLDB(DatabaseInterface):
             return False
 
     def insert_genre(self, name):
-        """Добавление жанра"""
         try:
             cur = self.conn.cursor()
             cur.execute(
@@ -66,7 +62,6 @@ class PostgreSQLDB(DatabaseInterface):
             return False
 
     def insert_video(self, title, description, duration, user_id, genre_ids=None):
-        """Добавление видео"""
         try:
             cur = self.conn.cursor()
 
@@ -94,7 +89,6 @@ class PostgreSQLDB(DatabaseInterface):
             return None
 
     def show_data(self, table_name):
-        """Показать данные из таблицы"""
         try:
             cur = self.conn.cursor()
             cur.execute(sql.SQL("SELECT * FROM {}").format(sql.Identifier(table_name)))
@@ -112,3 +106,18 @@ class PostgreSQLDB(DatabaseInterface):
 
     def get_db_type(self):
         return self.db_type
+
+
+
+
+
+
+
+
+
+# Идеально для:
+# - Сложные бизнес-правила
+# - Транзакционные операции
+# - Геоданные (PostGIS)
+# - JSON + реляционные данные
+# - Целостность данных критична

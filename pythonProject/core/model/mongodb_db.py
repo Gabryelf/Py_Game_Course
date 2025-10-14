@@ -12,7 +12,6 @@ class MongoDB(DatabaseInterface):
         self.connect()
 
     def connect(self):
-        """Подключение к MongoDB"""
         try:
             self.client = MongoClient(
                 DATABASES["mongodb"]["host"],
@@ -24,7 +23,6 @@ class MongoDB(DatabaseInterface):
             print(f"Ошибка подключения к MongoDB: {e}")
 
     def create_tables(self):
-        """В MongoDB нет таблиц, создаем коллекции"""
         try:
             # В MongoDB коллекции создаются автоматически при первой вставке
             collections = ["users", "genres", "videos"]
@@ -38,7 +36,6 @@ class MongoDB(DatabaseInterface):
             return False
 
     def insert_user(self, email, username, subscription_type='basic'):
-        """Добавление пользователя в MongoDB"""
         try:
             user_data = {
                 "email": email,
@@ -55,7 +52,6 @@ class MongoDB(DatabaseInterface):
             return None
 
     def insert_genre(self, name):
-        """Добавление жанра в MongoDB"""
         try:
             genre_data = {
                 "name": name,
@@ -76,7 +72,6 @@ class MongoDB(DatabaseInterface):
             return None
 
     def insert_video(self, title, description, duration, user_id, genre_ids=None):
-        """Добавление видео в MongoDB"""
         try:
             video_data = {
                 "title": title,
@@ -95,7 +90,6 @@ class MongoDB(DatabaseInterface):
             return None
 
     def show_data(self, collection_name):
-        """Показать данные из коллекции MongoDB"""
         try:
             documents = list(self.db[collection_name].find())
 
@@ -112,3 +106,19 @@ class MongoDB(DatabaseInterface):
 
     def get_db_type(self):
         return self.db_type
+
+
+
+
+
+
+
+
+
+
+# Идеально для:
+# - Быстрое прототипирование
+# - Гибкие схемы данных
+# - Большие объемы записи
+# - Контент-ориентированные приложения
+# - Масштабирование на множество серверов
