@@ -10,11 +10,12 @@ from client.src.utils.logger import logger
 @dataclass
 class TowerStats:
     """Характеристики башни"""
-    damage: float = 10.0
+    damage: float = 1.0
     attack_speed: float = 1.0  # Атак в секунду
     attack_range: float = 200.0
     critical_chance: float = 0.1  # 10%
     critical_multiplier: float = 2.0
+    max_health: float = 100.0
 
     @property
     def attack_cooldown(self) -> float:
@@ -33,6 +34,10 @@ class Tower:
         self.experience = 0
         self.experience_to_next_level = 100
 
+        # Здоровье башни
+        self.health = self.current_stats.max_health
+        self.max_health = self.current_stats.max_health
+
         # Система стрельбы
         self.projectiles: List['Projectile'] = []
         self.last_attack_time = 0
@@ -44,9 +49,37 @@ class Tower:
 
         logger.info("Tower created")
 
+    def take_damage(self, damage: float) -> bool:
+        """Получение урона башней. Возвращает True если башня уничтожена"""
+        self.health -= damage
+        logger.debug(f"Tower took {damage} damage. Health: {self.health}/{self.max_health}")
+
+        if self.health <= 0:
+            logger.info("Tower destroyed!")
+            return True
+        return False
+
+    def heal(self, amount: float) -> None:
+        """Восстановление здоровья башни"""
+        self.health = min(self.max_health, self.health + amount)
+        logger.debug(f"Tower healed {amount}. Health: {self.health}/{self.max_health}")
+
+    def is_alive(self) -> bool:
+        """Проверка, жива ли башня"""
+        return self.health > 0
+
+    @property
+    def health_ratio(self) -> float:
+        """Отношение текущего здоровья к максимальному"""
+        return self.health / self.max_health
+
     def update(self, delta_time: float, enemies: List['Enemy']) -> List['Projectile']:
         """Обновление логики башни. Возвращает новые снаряды"""
         new_projectiles = []
+
+        # Если башня уничтожена, не стреляем
+        if not self.is_alive():
+            return new_projectiles
 
         # Поиск цели
         if not self.current_target or not self.current_target.is_alive():
@@ -71,7 +104,8 @@ class Tower:
         return new_projectiles
 
     def _find_target(self, enemies: List['Enemy']) -> Optional['Enemy']:
-        """Поиск цели в радиусе атаки"""
+        """Поиск цели в радиусе атаки - всегда ближайший враг"""
+        # Фильтруем только живых врагов в радиусе атаки
         valid_targets = [
             enemy for enemy in enemies
             if enemy.is_alive() and self._is_target_in_range(enemy)
@@ -80,7 +114,7 @@ class Tower:
         if not valid_targets:
             return None
 
-        # Простая стратегия: ближайшая цель
+        # Всегда выбираем ближайшего врага
         return min(valid_targets, key=lambda e: self._distance_to(e))
 
     def _is_target_in_range(self, enemy: 'Enemy') -> bool:
@@ -133,8 +167,13 @@ class Tower:
         # Автоматическое улучшение характеристик при уровне
         self.current_stats.damage *= 1.1
         self.current_stats.attack_speed *= 1.05
+        self.current_stats.max_health *= 1.2
+        self.max_health = self.current_stats.max_health
 
-        logger.info(f"Tower reached level {self.level}!")
+        # Полное восстановление здоровья при уровне
+        self.health = self.max_health
+
+        logger.info(f"Tower reached level {self.level}! Health: {self.health}")
 
     def can_level_up(self) -> bool:
         """Можно ли повысить уровень"""

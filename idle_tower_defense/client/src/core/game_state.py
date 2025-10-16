@@ -43,6 +43,7 @@ class GameState:
         self.player_progress = PlayerProgress()
         self.game_active = False
         self.wave_in_progress = False
+        self.victory = False
 
         # Статистика текущей битвы
         self.current_enemies: List['Enemy'] = []
@@ -61,11 +62,15 @@ class GameState:
         if self.current_state == GameStateType.LOBBY:
             self.change_state(GameStateType.BATTLE)
             self.game_active = True
+            self.victory = False
             self.player_progress = PlayerProgress()  # Сброс прогресса для новой битвы
             logger.info("New battle started")
 
     def end_battle(self, victory: bool):
         """Завершить битву"""
+        self.victory = victory
+        self.game_active = False
+
         if victory:
             # Награда за победу
             reward = self.player_progress.current_wave * 10
@@ -73,7 +78,6 @@ class GameState:
             self.player_progress.diamonds += 1
             logger.info(f"Battle victorious! Reward: {reward} coins, 1 diamond")
         else:
-            logger.info("Battle lost")
+            logger.info("Battle lost - tower destroyed")
 
         self.change_state(GameStateType.LOBBY)
-        self.game_active = False

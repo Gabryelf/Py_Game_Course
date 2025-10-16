@@ -31,14 +31,6 @@ class GameConfig:
         """Центр экрана - вычисляемое свойство"""
         return (self.SCREEN_WIDTH // 2, self.SCREEN_HEIGHT // 2)
 
-    @property
-    def enemy_path(self) -> List[Tuple[float, float]]:
-        """Путь движения врагов от края экрана к центру"""
-        return [
-            (-50, self.SCREEN_HEIGHT // 2),  # Начинают за экраном слева
-            (self.SCREEN_WIDTH // 2, self.SCREEN_HEIGHT // 2)  # Идут к башне в центре
-        ]
-
 
 # Глобальный экземпляр конфигурации
 config = GameConfig()

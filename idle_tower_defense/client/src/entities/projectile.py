@@ -17,13 +17,16 @@ class Projectile:
         self.speed = speed
         self.active = True
         self.radius = 5
-        self.color = (255, 255, 0)  # Желтый цвет снарядов (данные для рендерера)
+        self.color = (255, 255, 0)
 
         logger.debug(f"Projectile created targeting {target.type.name}")
 
     def update(self) -> bool:
         """Обновление позиции снаряда. Возвращает True если достиг цели"""
-        if not self.active or not self.target.is_alive():
+        if not self.active:
+            return True
+
+        if not self.target.is_alive():
             self.active = False
             return True
 
@@ -34,7 +37,8 @@ class Projectile:
         distance = math.sqrt(dx * dx + dy * dy)
 
         if distance < self.speed + self.target.radius:
-            # Снаряд достиг цели
+            # Снаряд достиг цели - наносим урон
+            self.target.take_damage(self.damage)
             self.active = False
             return True
 
@@ -50,5 +54,3 @@ class Projectile:
         )
 
         return False
-
-    # УДАЛЯЕМ метод draw - рендеринг будет в другом месте
