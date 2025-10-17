@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List
 import pygame
 from core.game_object import GameObject
 from core.direction import Direction
@@ -37,7 +37,7 @@ class Snake(GameObject):
         for segment in self.segments:
             segment.draw(surface)
 
-    def get_position(self) -> Tuple[int, int]:
+    def get_position(self) -> tuple[int, int]:
         return self.segments[0].get_position()
 
     def change_direction(self, new_direction: Direction):
@@ -54,5 +54,5 @@ class Snake(GameObject):
                 return True
         return False
 
-    def get_segments_positions(self) -> List[Tuple[int, int]]:
+    def get_segments_positions(self) -> List[tuple[int, int]]:
         return [segment.get_position() for segment in self.segments]

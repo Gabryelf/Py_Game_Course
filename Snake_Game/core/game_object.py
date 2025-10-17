@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import Tuple
 import pygame
 
 
@@ -14,5 +13,5 @@ class GameObject(ABC):
         pass
 
     @abstractmethod
-    def get_position(self) -> Tuple[int, int]:
+    def get_position(self) -> tuple[int, int]:
         pass

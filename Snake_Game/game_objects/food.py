@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List
 import random
 import pygame
 from core.game_object import GameObject
@@ -18,10 +18,10 @@ class Food(GameObject):
         pygame.draw.rect(surface, (255, 0, 0),
                          (self.x, self.y, self.size, self.size))
 
-    def get_position(self) -> Tuple[int, int]:
-        return (self.x, self.y)
+    def get_position(self) -> tuple[int, int]:
+        return self.x, self.y
 
-    def respawn(self, max_x: int, max_y: int, occupied_positions: List[Tuple[int, int]]):
+    def respawn(self, max_x: int, max_y: int, occupied_positions: List[tuple[int, int]]):
         while True:
             # Выравниваем по сетке
             self.x = random.randint(0, (max_x - self.size) // self.size) * self.size

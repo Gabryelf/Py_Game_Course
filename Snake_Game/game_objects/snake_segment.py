@@ -1,4 +1,3 @@
-from typing import Tuple
 import pygame
 from core.game_object import GameObject
 
@@ -20,8 +19,8 @@ class SnakeSegment(GameObject):
         pygame.draw.rect(surface, (0, 200, 0),
                          (self.x, self.y, self.size, self.size), 1)
 
-    def get_position(self) -> Tuple[int, int]:
-        return (self.x, self.y)
+    def get_position(self) -> tuple[int, int]:
+        return self.x, self.y
 
     def set_position(self, x: int, y: int):
         self.x = x
