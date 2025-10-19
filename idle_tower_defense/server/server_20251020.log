@@ -1,0 +1,334 @@
+2025-10-20 00:15:58,709 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:15:58,709 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:15:58,710 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:15:58,710 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:15:58,711 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:15:58,711 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:16:23,941 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:16:23,941 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:16:24,514 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:18:26,738 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:18:26,738 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:18:27,285 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:18:27,285 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:18:27,300 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:18:27,300 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:18:27,300 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:18:27,300 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:18:37,381 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:18:37,381 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:18:38,029 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:20:46,116 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:20:46,116 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:20:46,652 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:20:56,104 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:20:56,104 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:20:56,743 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:03,170 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:03,170 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:03,703 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:13,574 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:13,574 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:14,196 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:39,896 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:39,896 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:40,452 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:50,171 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:50,171 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:22:50,772 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:15,305 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:15,305 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:15,872 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:24,212 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:24,212 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:24,820 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:46,100 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:46,100 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:46,658 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:55,548 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:55,548 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:23:56,126 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:30:23,843 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:30:23,843 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:30:24,487 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:31:38,773 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:35:35,633 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:35:35,633 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:35:53,519 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:13,423 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:13,423 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:14,019 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:19,831 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:19,831 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:20,444 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:42,262 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:42,262 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:38:42,885 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:42,885 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:38:42,886 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:42,886 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:38:42,886 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:38:42,886 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:39:07,995 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:39:07,995 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:39:08,583 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:39:08,583 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:39:08,584 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:39:08,584 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:39:08,584 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:39:08,584 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:39:51,273 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:39:51,273 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:39:55,648 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:48:59,579 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:48:59,579 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:00,149 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:02,429 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:02,429 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:03,029 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:04,883 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:04,883 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:05,670 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:06,978 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:06,978 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:07,545 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:13,597 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:13,597 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:14,170 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:14,170 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:14,170 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:14,170 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:14,185 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:14,185 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:22,775 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:22,775 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:23,383 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:34,636 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:34,636 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:35,356 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:53,109 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:53,109 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:53,712 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:55,802 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:55,802 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:56,431 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:58,825 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:58,825 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:49:59,417 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:59,417 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:49:59,464 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:59,464 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:49:59,480 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:49:59,480 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:32,496 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:32,496 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:33,123 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:36,394 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:36,394 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:37,021 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:37,021 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:37,036 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:37,036 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:37,036 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:37,036 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:55,767 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:55,767 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:50:56,306 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:03,024 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:03,024 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:07,681 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:27,077 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:27,077 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:27,672 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:30,526 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:30,526 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:31,112 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:34,065 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:34,065 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:34,613 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:38,343 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:38,343 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:39,024 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:42,252 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:42,252 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:42,857 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:44,832 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:44,832 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:25] - Starting Idle Tower Defense Server with SQLite
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:29] - SQLite database initialized successfully
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:51:45,412 - idle_tower_defense_server - INFO - [main.py:35] - Database tables: ['users', 'player_progress', 'player_upgrades', 'achievements', 'player_achievements']
+2025-10-20 00:52:12,455 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down
+2025-10-20 00:52:12,455 - idle_tower_defense_server - INFO - [main.py:44] - Server shut down

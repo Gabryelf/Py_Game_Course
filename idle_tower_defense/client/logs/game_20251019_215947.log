@@ -1,0 +1,4 @@
+2025-10-19 21:59:47,648 - IdleTowerDefense - INFO - Starting Idle Tower Defense Client
+2025-10-19 21:59:47,648 - IdleTowerDefense - INFO - Starting Idle Tower Defense Client
+2025-10-19 21:59:47,648 - IdleTowerDefense - ERROR - Critical error in main: 'GameConfig' object has no attribute 'USE_MOCK_AUTH'
+2025-10-19 21:59:47,648 - IdleTowerDefense - ERROR - Critical error in main: 'GameConfig' object has no attribute 'USE_MOCK_AUTH'

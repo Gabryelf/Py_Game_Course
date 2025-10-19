@@ -15,6 +15,7 @@ from ..systems.upgrade_system import UpgradeSystem
 from ..utils.config import config
 from ..utils.logger import logger
 from .enemy_spawner import EnemySpawner
+from client.game_client import GameClient
 
 
 class GameEngine:
@@ -27,9 +28,18 @@ class GameEngine:
         # Инициализация всех систем в конструкторе - понятная структура
         self._initialize_systems()
         self._initialize_state()
+        self.game_client = GameClient()  # Добавляем клиент для сервера
+        self.authenticated = False
 
     def _initialize_systems(self) -> None:
         """Инициализация игровых систем"""
+        if not self._check_authentication():
+            return False
+
+        if not self._initialize_graphics():
+            return False
+
+        self._load_server_data()  # Загружаем данные с сервера
         # Системы рендеринга
         self.renderer: Optional[Renderer] = None
         self.entity_renderer: Optional[EntityRenderer] = None
@@ -48,6 +58,42 @@ class GameEngine:
         self.ui_components: List[Button | InfoPanel | UpgradePanel] = []
         self.upgrade_panel: Optional[UpgradePanel] = None
 
+    def _check_authentication(self) -> bool:
+        """Проверка аутентификации пользователя"""
+        # Здесь можно добавить UI для входа/регистрации
+        # Пока используем mock-аутентификацию для тестов
+        if config.USE_MOCK_AUTH:
+            self.authenticated = True
+            return True
+
+        # Реальная аутентификация
+        # return self._show_login_screen()
+        return True
+
+    def _load_server_data(self):
+        """Загрузка данных игрока с сервера"""
+        if not self.authenticated:
+            return
+
+        progress = self.game_client.load_game_progress()
+        if progress:
+            self._apply_server_progress(progress)
+
+    def _save_to_server(self):
+        """Сохранение прогресса на сервер"""
+        if not self.authenticated:
+            return
+
+        game_data = {
+            "coins": self.game_state.player_progress.coins,
+            "diamonds": self.game_state.player_progress.diamonds,
+            "score": self.game_state.player_progress.score,
+            "current_wave": self.game_state.player_progress.current_wave,
+            "enemies_defeated": self.game_state.player_progress.enemies_defeated,
+            "upgrades": self.upgrade_system.save_upgrades()
+        }
+
+        self.game_client.save_game_progress(game_data)
     def _initialize_state(self) -> None:
         """Инициализация состояния игры"""
         self.running: bool = False
