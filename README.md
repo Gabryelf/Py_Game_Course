@@ -5,12 +5,12 @@
 
 <!-- Статистика -->
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical" height="150"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Gabryelf&show_icons=true&theme=radical" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gabryelf&layout=compact&theme=radical" height="150"/>
 </div>
 
 <!-- Streak -->
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=radical" alt="mystreak"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Gabryelf&theme=radical" alt="mystreak"/>
 
 <!-- Анимированная разделительная линия -->
 ![divider](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
@@ -48,7 +48,7 @@
 <!-- Трофеи -->
 <div align="center">
   
-[![trophy](https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=radical&no-frame=true&row=1&margin-w=20)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=Gabryelf&theme=radical&no-frame=true&row=1&margin-w=20)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
@@ -94,16 +94,16 @@
 
 <!-- Кнопки -->
 <p align="center">
-  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/stargazers">
-    <img src="https://img.shields.io/github/stars/YOUR_USERNAME/YOUR_REPO?color=gold&style=for-the-badge" alt="Stars"/>
+  <a href="https://github.com/Gabryelf/Py_Game_Course/stargazers">
+    <img src="https://img.shields.io/github/stars/Gabryelf/Py_Game_Course?color=gold&style=for-the-badge" alt="Stars"/>
   </a>
-  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/forks">
-    <img src="https://img.shields.io/github/forks/YOUR_USERNAME/YOUR_REPO?color=green&style=for-the-badge" alt="Forks"/>
+  <a href="https://github.com/Gabryelf/Py_Game_Course/forks">
+    <img src="https://img.shields.io/github/forks/Gabryelf/Py_Game_Course?color=green&style=for-the-badge" alt="Forks"/>
   </a>
-  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/issues">
+  <a href="https://github.com/Gabryelf/Py_Game_Course/issues">
     <img src="https://img.shields.io/github/issues/YOUR_USERNAME/YOUR_REPO?color=blue&style=for-the-badge" alt="Issues"/>
   </a>
-  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/LICENSE">
+  <a href="https://github.com/Gabryelf/Py_Game_Course/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO?color=red&style=for-the-badge" alt="License"/>
   </a>
 </p>
