@@ -45,7 +45,6 @@
                 <label>В (целевой)</label>
                 <select id="toFormat">
                     <option value="gif">🖼️ GIF</option>
-                    <option value="mp4">🎬 MP4</option>
                     <option value="webm">🎬 WEBM</option>
                     <option value="wav">🎶 WAV</option>
                 </select>
@@ -53,7 +52,25 @@
         </div>
 
         <div class="sidebar-section">
-            <div class="section-title">🎛️ Настройки</div>
+            <div class="section-title">✂️ Область захвата</div>
+            <div class="capture-controls">
+                <div class="slider-group">
+                    <label>Начало (сек) <span id="startTimeVal">0</span></label>
+                    <input type="range" id="startTimeSlider" min="0" max="10" value="0" step="0.5">
+                </div>
+                <div class="slider-group">
+                    <label>Длительность (сек) <span id="durationVal">5</span></label>
+                    <input type="range" id="durationSlider" min="0.5" max="10" value="5" step="0.5">
+                </div>
+                <div style="display:flex; gap: 10px; margin-top: 8px;">
+                    <button id="previewSelectionBtn" class="btn-secondary" style="flex:1;">▶️ Предпросмотр</button>
+                    <button id="stopPreviewBtn" class="btn-secondary" style="flex:1;">⏹️ Стоп</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-title">🎛️ Настройки качества</div>
             <div class="select-group">
                 <label>Качество (GIF)</label>
                 <select id="qualitySelect">
@@ -72,9 +89,13 @@
                     <option value="30">30</option>
                 </select>
             </div>
-            <div class="slider-group">
-                <label>Длительность (сек) <span id="durationVal">5</span></label>
-                <input type="range" id="durationSlider" min="1" max="10" value="5" step="1">
+            <div class="select-group">
+                <label>Размер GIF</label>
+                <select id="sizeSelect">
+                    <option value="small">Маленький (320x240)</option>
+                    <option value="medium" selected>Средний (480x360)</option>
+                    <option value="large">Большой (640x480)</option>
+                </select>
             </div>
         </div>
 
