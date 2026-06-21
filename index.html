@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ConvertPro — Универсальный конвертер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">⚡</div>
+            <span>ConvertPro</span>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-title">📂 Исходный файл</div>
+            <div class="upload-area" id="fileUploadArea">
+                <input type="file" id="sourceFileInput" accept="video/*,audio/*" hidden>
+                <div class="upload-placeholder">
+                    <span class="upload-icon">📄</span>
+                    <span>Выберите файл</span>
+                    <small>MP4, WEBM, MP3, WAV, OGG</small>
+                </div>
+            </div>
+            <div class="file-status" id="fileStatus">Файл не выбран</div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-title">⚙️ Форматы</div>
+            <div class="select-group">
+                <label>Из (исходный)</label>
+                <select id="fromFormat">
+                    <option value="auto">🔍 Авто (по файлу)</option>
+                    <option value="mp4">🎬 MP4</option>
+                    <option value="webm">🎬 WEBM</option>
+                    <option value="mp3">🎵 MP3</option>
+                    <option value="wav">🎶 WAV</option>
+                    <option value="ogg">🎶 OGG</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label>В (целевой)</label>
+                <select id="toFormat">
+                    <option value="gif">🖼️ GIF</option>
+                    <option value="mp4">🎬 MP4</option>
+                    <option value="webm">🎬 WEBM</option>
+                    <option value="wav">🎶 WAV</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-title">🎛️ Настройки</div>
+            <div class="select-group">
+                <label>Качество (GIF)</label>
+                <select id="qualitySelect">
+                    <option value="low">Низкое (быстро)</option>
+                    <option value="medium" selected>Среднее</option>
+                    <option value="high">Высокое (медленно)</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label>FPS</label>
+                <select id="fpsSelect">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15" selected>15</option>
+                    <option value="24">24</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+            <div class="slider-group">
+                <label>Длительность (сек) <span id="durationVal">5</span></label>
+                <input type="range" id="durationSlider" min="1" max="10" value="5" step="1">
+            </div>
+        </div>
+
+        <div class="sidebar-actions">
+            <button id="convertBtn" class="btn-primary">🔄 Конвертировать</button>
+            <button id="resetBtn" class="btn-secondary">🗑️ Очистить</button>
+            <button id="downloadBtn" class="btn-export" disabled>⬇️ Скачать</button>
+        </div>
+    </aside>
+
+    <main class="canvas-area">
+        <div class="canvas-wrapper">
+            <canvas id="previewCanvas" width="1280" height="720"></canvas>
+            <div class="canvas-overlay" id="canvasOverlay">
+                <div class="overlay-content">
+                    <span>🔄</span>
+                    <p>Загрузите файл и выберите формат</p>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-info">
+            <span id="layerInfo">Файл: — | Размер: —</span>
+            <span id="exportProgress" class="progress-hidden"></span>
+        </div>
+    </main>
+</div>
+
+<!-- Подключаем gifshot -->
+<script src="https://cdn.jsdelivr.net/npm/gifshot@0.4.5/dist/gifshot.min.js"></script>
+<script src="converter.js"></script>
+</body>
+</html>
